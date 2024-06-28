@@ -1,0 +1,33 @@
+body {
+    background: url(./images/pink-moon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffd3d3;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  width: 150px;
+  border: none;
+  background-color: #be6969;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:active {
+    box-shadow: 2px 2px 2px #e99b9b;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+li {
+    list-style: none;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: #000;
+  }

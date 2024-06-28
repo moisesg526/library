@@ -6,15 +6,27 @@ const library = [
   "Heidi Heckelbeck and the hair emergency!",
 ];
 
+let container = document.querySelector(".container");
+
+let h1 = document.createElement("h1");
+h1.innerText = "My little one's book list";
+container.appendChild(h1);
+
+let btn = document.querySelector(".btn");
+container.appendChild(btn)
+
 let ul = document.createElement("ul");
 
-for (let books of library) {
-  let li = document.createElement("li");
-  li.innerText = books;
-  ul.appendChild(li);
+function displayBooks() {
+  for (let books of library) {
+    let li = document.createElement("li");
+    li.innerText = books;
+    ul.appendChild(li);
+  }
+  container.appendChild(ul);
 }
 
-document.body.appendChild(ul);
+displayBooks();
 
 function Book(title, author, pages, read) {
   this.title = title;
