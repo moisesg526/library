@@ -6,6 +6,16 @@ const library = [
   "Heidi Heckelbeck and the hair emergency!",
 ];
 
+let ul = document.createElement("ul");
+
+for (let books of library) {
+  let li = document.createElement("li");
+  li.innerText = books;
+  ul.appendChild(li);
+}
+
+document.body.appendChild(ul);
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
