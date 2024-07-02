@@ -31,3 +31,7 @@ li {
     line-height: 2rem;
     color: #000;
   }
+
+  .add-book-form {
+    display: none;
+  }

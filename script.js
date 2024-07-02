@@ -1,3 +1,14 @@
+let container = document.querySelector(".container");
+
+let h1 = document.createElement("h1");
+h1.innerText = "Yearly Reading";
+container.appendChild(h1);
+
+let btn = document.querySelector(".btn");
+container.appendChild(btn);
+
+let ul = document.createElement("ul");
+
 const library = [
   "Ellie's spooky surprise",
   "Mercy Watson goes for a ride",
@@ -5,17 +16,6 @@ const library = [
   "Heidi Heckelbeck might be afraid of the dark",
   "Heidi Heckelbeck and the hair emergency!",
 ];
-
-let container = document.querySelector(".container");
-
-let h1 = document.createElement("h1");
-h1.innerText = "My little one's book list";
-container.appendChild(h1);
-
-let btn = document.querySelector(".btn");
-container.appendChild(btn)
-
-let ul = document.createElement("ul");
 
 function displayBooks() {
   for (let books of library) {
@@ -39,6 +39,8 @@ function Book(title, author, pages, read) {
   };
   console.log("book");
 }
+
+
 
 function addBookToLibrary() {
   console.log("Book Added");
