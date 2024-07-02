@@ -9,19 +9,25 @@
   <body>
     <div class="container">
       <button class="btn">New Book</button>
-      <form class="add-book-form">
-        <label for="book-name">Book Title:</label><br />
-        <input type="text" id="book-name" name="book-name" /><br />
-        <label for="author">Author:</label><br />
-        <input type="text" id="author" name="author" /><br />
-        <label for="number-of-pages">Number of pages:</label><br />
-        <input type="text" id="number-of-pages" name="number-of-pages" /><br />
-        <label for="finished">Did we finish the book?</label>
-        <input type="radio" id="yes" name="finished" value="yes" />
-        <label for="yes">Yes</label>
-        <input type="radio" id="no" name="finished" value="no" />
-        <label for="no">No</label>
-      </form>
+      <div class="add-book-form">
+        <form>
+          <label for="book-name">Book Title:</label><br />
+          <input type="text" id="book-name" name="book-name" /><br />
+          <label for="author">Author:</label><br />
+          <input type="text" id="author" name="author" /><br />
+          <label for="number-of-pages">Number of pages:</label><br />
+          <input
+            type="text"
+            id="number-of-pages"
+            name="number-of-pages"
+          /><br />
+          <label for="finished">Did we finish the book?</label>
+          <input type="radio" id="yes" name="finished" value="yes" />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="finished" value="no" />
+          <label for="no">No</label>
+        </form>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
