@@ -10,6 +10,8 @@ container.appendChild(btn);
 let addBookForm = document.querySelector(".add-book-form");
 container.appendChild(addBookForm);
 
+let close = document.querySelector(".close");
+
 let ul = document.createElement("ul");
 
 const library = [
@@ -44,6 +46,11 @@ function Book(title, author, pages, read) {
 }
 
 btn.onclick = function () {
+  addBookForm.style.display =
+    addBookForm.style.display === "block" ? "none" : "block";
+};
+
+close.onclick = function () {
   addBookForm.style.display =
     addBookForm.style.display === "block" ? "none" : "block";
 };

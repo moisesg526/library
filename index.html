@@ -11,21 +11,23 @@
       <button class="btn">New Book</button>
       <div class="add-book-form">
         <form>
+            <h2>Add Book</h2>
+          <h3 class="close">X</h3>
           <label for="book-name">Book Title:</label><br />
-          <input type="text" id="book-name" name="book-name" /><br />
+          <input type="text" id="book-name" name="book-name" required/><br />
           <label for="author">Author:</label><br />
-          <input type="text" id="author" name="author" /><br />
+          <input type="text" id="author" name="author" required/><br />
           <label for="number-of-pages">Number of pages:</label><br />
           <input
-            type="text"
+            type="number"
             id="number-of-pages"
             name="number-of-pages"
+            required
           /><br />
-          <label for="finished">Did we finish the book?</label>
-          <input type="radio" id="yes" name="finished" value="yes" />
-          <label for="yes">Yes</label>
-          <input type="radio" id="no" name="finished" value="no" />
-          <label for="no">No</label>
+          <label for="finished">Was the book finished?</label><br />
+          <input type="checkbox" id="yes" name="finished" value="yes" />
+          <label for="yes">Yes</label><br>
+          <button type="submit">Add Book</button>
         </form>
       </div>
     </div>

@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background: url(./images/pink-moon.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #ffd3d3;
+  background: url(./images/pink-moon.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd3d3;
 }
 
 button {
@@ -17,21 +21,59 @@ button {
 }
 
 button:active {
-    box-shadow: 2px 2px 2px #e99b9b;
+  box-shadow: 2px 2px 2px #e99b9b;
 }
 
 .container {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 }
 
 li {
-    list-style: none;
-    font-size: 1.3rem;
-    line-height: 2rem;
-    color: #000;
-  }
+  list-style: none;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: #000;
+}
 
-  .add-book-form {
-    display: none;
-  }
+.add-book-form {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 2rem 4rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #e3e3e3;
+  top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7rem;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 2rem;
+}
+
+.close:active {
+  color: #4d4d4d;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #be6969;
+}
+
+input {
+  border-radius: 8px;
+  border: none;
+  background-color: #e7e7e7;
+  padding: 4px 20px;
+}
+
+input:focus {
+  outline: none;
+}
