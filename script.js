@@ -1,11 +1,15 @@
 let container = document.querySelector(".container");
 
+let bookContainer = document.querySelector(".book-container");
+
 let h1 = document.createElement("h1");
 h1.innerText = "Yearly Reading";
 container.appendChild(h1);
 
 let btn = document.querySelector(".btn");
 container.appendChild(btn);
+
+let addBtn = document.querySelector(".add-btn");
 
 let addBookForm = document.querySelector(".add-book-form");
 container.appendChild(addBookForm);
@@ -15,20 +19,30 @@ let close = document.querySelector(".close");
 let ul = document.createElement("ul");
 
 const library = [
-  "Ellie's spooky surprise",
-  "Mercy Watson goes for a ride",
-  "Marion and the secret letter",
-  "Heidi Heckelbeck might be afraid of the dark",
-  "Heidi Heckelbeck and the hair emergency!",
+  new Book("Ellie's spooky surprise", "Barkley Callie", 120, true),
+  new Book("Mercy Watson goes for a ride", "DiCAmmillo Kate", 72, false),
+  new Book("Marion and the secret letter", "Barkley Callie", 116, true),
+  new Book(
+    "Heidi Heckelbeck might be afraid of the dark",
+    "Coven Wanda",
+    119,
+    true
+  ),
+  new Book(
+    "Heidi Heckelbeck and the hair emergency!",
+    "Coven Wanda",
+    119,
+    false
+  ),
 ];
 
 function displayBooks() {
-  for (let books of library) {
+  bookContainer.innerHTML = "";
+  library.forEach(function (book) {
     let li = document.createElement("li");
-    li.innerText = books;
-    ul.appendChild(li);
-  }
-  container.appendChild(ul);
+    li.innerHTML = `<h3>${book.title}</h3> <p>${book.author}</p> <p>${book.pages} pages</p> <p>${book.read}</p>`;
+    bookContainer.appendChild(li);
+  });
 }
 
 displayBooks();
@@ -38,11 +52,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function () {
-    console.log(`${this.title} by ${this.author} ${this.pages}, ${this.read}`);
-    return `${this.title} by ${this.author} ${this.pages}, ${this.read}`;
-  };
-  console.log("book");
 }
 
 btn.onclick = function () {
@@ -55,6 +64,4 @@ close.onclick = function () {
     addBookForm.style.display === "block" ? "none" : "block";
 };
 
-function addBookToLibrary() {
-  console.log("Book Added");
-}
+function addBookToLibrary() {}
