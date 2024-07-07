@@ -1,13 +1,14 @@
 let container = document.querySelector(".container");
 
-let bookContainer = document.querySelector(".book-container");
-
 let h1 = document.createElement("h1");
 h1.innerText = "Yearly Reading";
 container.appendChild(h1);
 
 let btn = document.querySelector(".btn");
 container.appendChild(btn);
+
+let bookContainer = document.querySelector(".book-container");
+container.appendChild(bookContainer);
 
 let addBtn = document.querySelector(".add-btn");
 
@@ -37,10 +38,11 @@ const library = [
 ];
 
 function displayBooks() {
-  bookContainer.innerHTML = "";
   library.forEach(function (book) {
     let li = document.createElement("li");
-    li.innerHTML = `<h3>${book.title}</h3> <p>${book.author}</p> <p>${book.pages} pages</p> <p>${book.read}</p>`;
+    li.innerHTML = `<h3>${book.title}</h3> <p>${book.author}</p> <p>${
+      book.pages
+    } pages</p> <p>${book.read === true ? "Read" : "Unread"}</p>`;
     bookContainer.appendChild(li);
   });
 }
