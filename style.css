@@ -79,14 +79,14 @@ input:focus {
   outline: none;
 }
 
-.book-container {
+.book-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 16px;
   text-align: center;
 }
 
-.book-container li {
+.book-list li {
   background-color: #f3f3f3;
   margin: 2rem;
   border-color: #000;
@@ -94,7 +94,7 @@ input:focus {
   border-radius: 10px;
 }
 
-.book-container li img {
+.book-list li img {
   width: 100%;
   height: 50%;
 }
