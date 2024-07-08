@@ -16,8 +16,7 @@ let addBookForm = document.querySelector(".add-book-form");
 container.appendChild(addBookForm);
 
 let close = document.querySelector(".close");
-
-let ul = document.createElement("ul");
+let bookList = document.querySelector(".book-list");
 
 const library = [
   new Book("Ellie's spooky surprise", "Barkley Callie", 120, true),
@@ -40,10 +39,13 @@ const library = [
 function displayBooks() {
   library.forEach(function (book) {
     let li = document.createElement("li");
-    li.innerHTML = `<h3>${book.title}</h3> <p>${book.author}</p> <p>${
-      book.pages
-    } pages</p> <p>${book.read === true ? "Read" : "Unread"}</p>`;
-    bookContainer.appendChild(li);
+    li.innerHTML = `
+          <img src="./images/book.jpg" alt="Book"> <h3>${book.title}</h3> <p>${
+      book.author
+    }</p> <p>${book.pages} pages</p> <p>${
+      book.read === true ? "Read" : "Unread"
+    }</p>`;
+    bookList.appendChild(li);
   });
 }
 
@@ -66,4 +68,4 @@ close.onclick = function () {
     addBookForm.style.display === "block" ? "none" : "block";
 };
 
-function addBookToLibrary() {}
+// function addBookToLibrary()

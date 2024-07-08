@@ -9,25 +9,42 @@
   <body>
     <div class="container">
       <button class="btn">New Book</button>
-      <div class="book-container"></div>
+      <div class="book-container">
+        <ul class="book-list"></ul>
+      </div>
       <div class="add-book-form">
         <form>
-            <h2>Add Book</h2>
+          <h2>Add Book</h2>
           <h3 class="close">X</h3>
           <label for="book-name">Book Title:</label><br />
-          <input type="text" id="book-name" name="book-name" required/><br />
-          <label for="author">Author:</label><br />
-          <input type="text" id="author" name="author" required/><br />
-          <label for="number-of-pages">Number of pages:</label><br />
+          <input
+            type="text"
+            id="book-name"
+            name="book-name"
+            value=" "
+            required
+          /><br />
+          <label for="author" value="author">Author:</label><br />
+          <input
+            type="text"
+            id="author"
+            name="author"
+            value=" "
+            required
+          /><br />
+          <label for="number-of-pages" value="pages">Number of pages:</label
+          ><br />
           <input
             type="number"
             id="number-of-pages"
             name="number-of-pages"
+            value=" "
             required
           /><br />
-          <label for="finished">Was the book finished?</label><br />
-          <input type="checkbox" id="yes" name="finished" value="yes" />
-          <label for="yes">Yes</label><br>
+          <label for="finished" value="finished">Was the book finished?</label
+          ><br />
+          <input type="checkbox" id="yes" name="finished" value=" " />
+          <label for="yes">Yes</label><br />
           <button type="submit" class="add-btn">Add Book</button>
         </form>
       </div>

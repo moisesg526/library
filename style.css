@@ -4,10 +4,11 @@
 
 body {
   background: url(./images/pink-moon.jpg);
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ffd3d3;
+  background-attachment: fixed;
 }
 
 button {
@@ -80,7 +81,9 @@ input:focus {
 
 .book-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 16px;
+  text-align: center;
 }
 
 .book-container li {
@@ -88,5 +91,10 @@ input:focus {
   margin: 2rem;
   border-color: #000;
   border: 1px solid;
-  padding: 16px;
+  border-radius: 10px;
+}
+
+.book-container li img {
+  width: 100%;
+  height: 50%;
 }
