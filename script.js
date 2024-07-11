@@ -68,4 +68,27 @@ close.onclick = function () {
     addBookForm.style.display === "block" ? "none" : "block";
 };
 
-// function addBookToLibrary()
+addBtn.addEventListener("click", addBookToLibrary);
+
+function addBookToLibrary(e) {
+  e.preventDefault();
+  //   let li = document.createElement("li");
+  //   let title = "#book-name".valueOf();
+  //   li.innerHTML = `<img src="./images/book.jpg" alt="Book"> <h3>${title}</h3>`;
+  //   bookList.appendChild(li);
+  let bookTitle = document.querySelector(".book-name");
+  let author = document.querySelector(".author");
+  let pages = document.querySelector(".number-of-pages");
+  let read = document.querySelector(".read");
+
+  let li = document.createElement("li");
+  li.innerHTML = `
+          <img src="./images/book.jpg" alt="Book"> <h3>${
+            bookTitle.value
+          }</h3> <p>${author.value}</p> <p>${pages.value}</p> <p>${
+    read.vlaue === true ? "read" : "Unread"
+  }</p>`;
+  bookList.appendChild(li);
+  console.log(bookTitle);
+  alert("added");
+}

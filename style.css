@@ -94,7 +94,13 @@ input:focus {
   border-radius: 10px;
 }
 
+.book-list li:hover {
+  box-shadow: 2px 2px 2px #e99b9b;
+}
+
 .book-list li img {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
   width: 100%;
   height: 50%;
 }
