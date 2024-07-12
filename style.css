@@ -79,12 +79,12 @@ input:focus {
   outline: none;
 }
 
-
 .book-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   text-align: center;
   place-items: center;
+  row-gap: 1rem;
 }
 
 .book-list li {
