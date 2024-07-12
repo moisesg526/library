@@ -32,12 +32,10 @@ button:active {
 
 li {
   list-style: none;
-  font-size: 1.3rem;
-  line-height: 2rem;
   color: #000;
 }
 
-.add-book-form {
+.book-form {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -46,8 +44,10 @@ li {
   border-radius: 10px;
   box-shadow: 5px 5px 5px #e3e3e3;
   top: 20%;
-  margin-left: auto;
-  margin-right: auto;
+  right: 0%;
+  left: 0%;
+  width: 20%;
+  margin: auto;
   line-height: 1.7rem;
 }
 
@@ -79,19 +79,22 @@ input:focus {
   outline: none;
 }
 
+
 .book-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   text-align: center;
+  place-items: center;
 }
 
 .book-list li {
   background-color: #f3f3f3;
-  margin: 2rem;
   border-color: #000;
   border: 1px solid;
   border-radius: 10px;
+  width: 50%;
+  height: 100%;
+  font-size: 0.8rem;
 }
 
 .book-list li:hover {

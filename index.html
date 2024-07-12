@@ -11,41 +11,40 @@
       <button class="btn">New Book</button>
       <div class="book-container">
         <ul class="book-list"></ul>
-      </div>
-      <div class="add-book-form">
-        <form>
-          <h2>Add Book</h2>
-          <h3 class="close">X</h3>
-          <label for="book-name">Book Title:</label><br />
-          <input
-            type="text"
-            class="book-name"
-            name="book-name"
-            required
-          /><br />
-          <label for="author" value="author">Author:</label><br />
-          <input
-            type="text"
-            class="author"
-            name="author"
-            value=" "
-            required
-          /><br />
-          <label for="number-of-pages" value="pages">Number of pages:</label
-          ><br />
-          <input
-            type="number"
-            class="number-of-pages"
-            name="number-of-pages"
-            value=" "
-            required
-          /><br />
-          <label for="finished" value="finished">Was the book finished?</label
-          ><br />
-          <input type="checkbox" class="read" name="finished" value=" " />
-          <label for="yes">Yes</label><br />
-          <button type="submit" class="add-btn">Add Book</button>
-        </form>
+        <div class="add-book-form">
+          <form class="book-form">
+            <h2>Add Book</h2>
+            <h3 class="close">X</h3>
+            <label for="book-name">Book Title:</label><br />
+            <input
+              type="text"
+              class="book-name"
+              name="book-name"
+              required
+            /><br />
+            <label for="author" value="author">Author:</label><br />
+            <input
+              type="text"
+              class="author"
+              name="author"
+              value=" "
+              required
+            /><br />
+            <label for="number-of-pages" value="pages">Number of pages:</label
+            ><br />
+            <input
+              type="number"
+              class="number-of-pages"
+              name="number-of-pages"
+              value=" "
+              required
+            /><br />
+            <label for="read">Was the book finished?</label><br />
+            <input type="checkbox" class="read" name="read" />
+            <label for="yes">Yes</label><br />
+            <button type="submit" class="add-btn">Add Book</button>
+          </form>
+        </div>
       </div>
     </div>
     <script src="./script.js"></script>

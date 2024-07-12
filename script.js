@@ -10,7 +10,7 @@ container.appendChild(btn);
 let bookContainer = document.querySelector(".book-container");
 container.appendChild(bookContainer);
 
-let addBtn = document.querySelector(".add-btn");
+let bookForm = document.querySelector(".book-form");
 
 let addBookForm = document.querySelector(".add-book-form");
 container.appendChild(addBookForm);
@@ -44,7 +44,7 @@ function displayBooks() {
       book.author
     }</p> <p>${book.pages} pages</p> <p>${
       book.read === true ? "Read" : "Unread"
-    }</p>`;
+    }</p>       <button class="remove">Delete</button>`;
     bookList.appendChild(li);
   });
 }
@@ -59,23 +59,20 @@ function Book(title, author, pages, read) {
 }
 
 btn.onclick = function () {
-  addBookForm.style.display =
-    addBookForm.style.display === "block" ? "none" : "block";
+  bookForm.style.display =
+    bookForm.style.display === "block" ? "none" : "block";
 };
 
 close.onclick = function () {
-  addBookForm.style.display =
-    addBookForm.style.display === "block" ? "none" : "block";
+  bookForm.style.display =
+    bookForm.style.display === "block" ? "none" : "block";
 };
 
-addBtn.addEventListener("click", addBookToLibrary);
+bookForm.addEventListener("submit", addBookToLibrary);
 
 function addBookToLibrary(e) {
   e.preventDefault();
-  //   let li = document.createElement("li");
-  //   let title = "#book-name".valueOf();
-  //   li.innerHTML = `<img src="./images/book.jpg" alt="Book"> <h3>${title}</h3>`;
-  //   bookList.appendChild(li);
+
   let bookTitle = document.querySelector(".book-name");
   let author = document.querySelector(".author");
   let pages = document.querySelector(".number-of-pages");
@@ -86,9 +83,11 @@ function addBookToLibrary(e) {
           <img src="./images/book.jpg" alt="Book"> <h3>${
             bookTitle.value
           }</h3> <p>${author.value}</p> <p>${pages.value}</p> <p>${
-    read.vlaue === true ? "read" : "Unread"
-  }</p>`;
+    read.checked ? "Read" : "Unread"
+  }</p> <button class="remove">Delete</button>`;
   bookList.appendChild(li);
+  document.querySelector(".book-form").reset();
+  document.querySelector(".book-form").style.display = "none";
+
   console.log(bookTitle);
-  alert("added");
 }
