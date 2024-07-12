@@ -1,23 +1,3 @@
-let container = document.querySelector(".container");
-
-let h1 = document.createElement("h1");
-h1.innerText = "Yearly Reading";
-container.appendChild(h1);
-
-let btn = document.querySelector(".btn");
-container.appendChild(btn);
-
-let bookContainer = document.querySelector(".book-container");
-container.appendChild(bookContainer);
-
-let bookForm = document.querySelector(".book-form");
-
-let addBookForm = document.querySelector(".add-book-form");
-container.appendChild(addBookForm);
-
-let close = document.querySelector(".close");
-let bookList = document.querySelector(".book-list");
-
 const library = [
   new Book("Ellie's spooky surprise", "Barkley Callie", 120, true),
   new Book("Mercy Watson goes for a ride", "DiCAmmillo Kate", 72, false),
@@ -36,9 +16,35 @@ const library = [
   ),
 ];
 
+let container = document.querySelector(".container");
+
+let h1 = document.createElement("h1");
+h1.innerText = "Yearly Reading";
+container.appendChild(h1);
+
+let btn = document.querySelector(".btn");
+container.appendChild(btn);
+
+let bookContainer = document.querySelector(".book-container");
+container.appendChild(bookContainer);
+
+let bookForm = document.querySelector(".book-form");
+
+let addBookForm = document.querySelector(".add-book-form");
+container.appendChild(addBookForm);
+
+let closeWindow = document.querySelector(".close");
+let bookList = document.querySelector(".book-list");
+
+let remove = document.querySelector(".remove");
+
+let count = 0;
+
 function displayBooks() {
   library.forEach(function (book) {
+    count++;
     let li = document.createElement("li");
+    li.setAttribute("id", count);
     li.innerHTML = `
           <img src="./images/book.jpg" alt="Book"> <h3>${book.title}</h3> <p>${
       book.author
@@ -63,14 +69,21 @@ btn.onclick = function () {
     bookForm.style.display === "block" ? "none" : "block";
 };
 
-close.onclick = function () {
+closeWindow.onclick = function () {
   bookForm.style.display =
     bookForm.style.display === "block" ? "none" : "block";
 };
 
+// remove.onclick = function () {
+//   window.onload = function () {
+//     alert("deleted item");
+//   };
+// };
+
 bookForm.addEventListener("submit", addBookToLibrary);
 
 function addBookToLibrary(e) {
+  count++;
   e.preventDefault();
 
   let bookTitle = document.querySelector(".book-name");
@@ -79,6 +92,7 @@ function addBookToLibrary(e) {
   let read = document.querySelector(".read");
 
   let li = document.createElement("li");
+  li.setAttribute("id", count);
   li.innerHTML = `
           <img src="./images/book.jpg" alt="Book"> <h3>${
             bookTitle.value
