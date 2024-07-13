@@ -112,3 +112,11 @@ input:focus {
   background-color: #e3e3e3;
   color: #e99b9b;
 }
+
+.read-btn {
+  /* background-color: #d4a7a7; */
+  background-color: #e3e3e3;
+  color: #d4a7a7;
+  margin: .5rem 0;
+  width: 50%;
+}

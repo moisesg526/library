@@ -68,7 +68,7 @@ function addBookToDOM(book) {
       <h3>${book.title}</h3>
       <p>${book.author}</p>
       <p>${book.pages} pages</p>
-      <p>${book.read ? "Read" : "Unread"}</p>
+      <button class="read-btn">${book.read ? "Read" : "Unread"}</button>
       <button class="remove">Delete</button>
     `;
   bookList.appendChild(li);
