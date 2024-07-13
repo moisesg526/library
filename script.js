@@ -77,6 +77,10 @@ function addBookToDOM(book) {
     alert("Delete button clicked");
     li.remove();
   });
+  li.querySelector(".read-btn").addEventListener("click", function () {
+    book.read = !book.read;
+    this.textContent = book.read ? "Read" : "Unread";
+  });
 }
 
 displayBooks();
@@ -91,7 +95,6 @@ closeWindow.onclick = function () {
 };
 
 bookForm.addEventListener("submit", addBookToLibrary);
-
 
 //Function to add book to library
 function addBookToLibrary(e) {
