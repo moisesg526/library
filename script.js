@@ -1,3 +1,12 @@
+// Book constructor
+function Book(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+}
+
+// Initial library array
 const library = [
   new Book("Ellie's spooky surprise", "Barkley Callie", 120, true),
   new Book("Mercy Watson goes for a ride", "DiCAmmillo Kate", 72, false),
@@ -29,40 +38,48 @@ let bookContainer = document.querySelector(".book-container");
 container.appendChild(bookContainer);
 
 let bookForm = document.querySelector(".book-form");
+container.appendChild(bookForm);
 
 let addBookForm = document.querySelector(".add-book-form");
 container.appendChild(addBookForm);
 
 let closeWindow = document.querySelector(".close");
-let bookList = document.querySelector(".book-list");
+container.appendChild(closeWindow);
 
-let remove = document.querySelector(".remove");
+let bookList = document.querySelector(".book-list");
+container.appendChild(bookList);
 
 let count = 0;
 
+// Function to display books from the library array
 function displayBooks() {
   library.forEach(function (book) {
-    count++;
-    let li = document.createElement("li");
-    li.setAttribute("id", count);
-    li.innerHTML = `
-          <img src="./images/book.jpg" alt="Book"> <h3>${book.title}</h3> <p>${
-      book.author
-    }</p> <p>${book.pages} pages</p> <p>${
-      book.read === true ? "Read" : "Unread"
-    }</p>       <button class="remove">Delete</button>`;
-    bookList.appendChild(li);
+    addBookToDOM(book);
+  });
+}
+
+// Function to add a book to the DOM
+function addBookToDOM(book) {
+  count++;
+  let li = document.createElement("li");
+  li.setAttribute("id", count);
+  li.innerHTML = `
+      <img src="./images/book.jpg" alt="Book">
+      <h3>${book.title}</h3>
+      <p>${book.author}</p>
+      <p>${book.pages} pages</p>
+      <p>${book.read ? "Read" : "Unread"}</p>
+      <button class="remove">Delete</button>
+    `;
+  bookList.appendChild(li);
+
+  li.querySelector(".remove").addEventListener("click", function () {
+    alert("Delete button clicked");
+    li.remove();
   });
 }
 
 displayBooks();
-
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
 
 btn.onclick = function () {
   bookForm.style.display =
@@ -70,38 +87,25 @@ btn.onclick = function () {
 };
 
 closeWindow.onclick = function () {
-  bookForm.style.display =
-    bookForm.style.display === "block" ? "none" : "block";
+  bookForm.style.display = "none";
 };
-
-// remove.onclick = function () {
-//   window.onload = function () {
-//     alert("deleted item");
-//   };
-// };
 
 bookForm.addEventListener("submit", addBookToLibrary);
 
+
+//Function to add book to library
 function addBookToLibrary(e) {
-  count++;
   e.preventDefault();
 
-  let bookTitle = document.querySelector(".book-name");
-  let author = document.querySelector(".author");
-  let pages = document.querySelector(".number-of-pages");
-  let read = document.querySelector(".read");
+  let bookTitle = document.querySelector(".book-name").value;
+  let author = document.querySelector(".author").value;
+  let pages = document.querySelector(".number-of-pages").value;
+  let read = document.querySelector(".read").checked;
 
-  let li = document.createElement("li");
-  li.setAttribute("id", count);
-  li.innerHTML = `
-          <img src="./images/book.jpg" alt="Book"> <h3>${
-            bookTitle.value
-          }</h3> <p>${author.value}</p> <p>${pages.value}</p> <p>${
-    read.checked ? "Read" : "Unread"
-  }</p> <button class="remove">Delete</button>`;
-  bookList.appendChild(li);
-  document.querySelector(".book-form").reset();
-  document.querySelector(".book-form").style.display = "none";
+  let newBook = new Book(bookTitle, author, pages, read);
+  library.push(newBook);
+  addBookToDOM(newBook);
 
-  console.log(bookTitle);
+  bookForm.reset();
+  bookForm.style.display = "none";
 }
