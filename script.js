@@ -74,7 +74,7 @@ function addBookToDOM(book) {
   bookList.appendChild(li);
 
   li.querySelector(".remove").addEventListener("click", function () {
-    alert("Delete button clicked");
+    alert("Removing Book");
     li.remove();
   });
   li.querySelector(".read-btn").addEventListener("click", function () {
